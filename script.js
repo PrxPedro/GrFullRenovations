@@ -210,11 +210,12 @@ function openLightboxDynamic(index, imgNodeList) {
 
 
 function filterGallery(button) {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
+    // Query fresh — buttons and items are injected dynamically after page load
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
 
     const filter = button.getAttribute('data-filter');
-    galleryItems.forEach(item => {
+    document.querySelectorAll('.gallery-item').forEach(item => {
         const match = filter === 'all' || item.getAttribute('data-category') === filter;
         item.style.display = match ? 'block' : 'none';
         if (match) item.style.animation = 'fadeIn .4s ease both';
@@ -364,7 +365,7 @@ function showFormSuccess(name, phone) {
     removeFormMessage();
     const el = document.createElement('p');
     el.className = 'form-msg form-msg--success';
-    el.innerHTML = `<i class="fas fa-check-circle"></i> Thanks, ${name}! We'll be in touch at <strong>${phone}</strong> within 3 business days.`;
+    el.innerHTML = `<i class="fas fa-check-circle"></i> Thanks, ${name}! We'll be in touch at <strong>${phone}</strong> within 1 business day.`;
     el.style.cssText = 'color:#1a6f3c;background:#f0faf5;border:1px solid #a8dbbe;padding:12px 16px;border-radius:6px;font-size:.9rem;margin-bottom:12px;';
     contactForm.prepend(el);
     setTimeout(removeFormMessage, 8000);
