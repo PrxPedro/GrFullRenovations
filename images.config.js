@@ -69,6 +69,21 @@ const GALLERY_CONFIG = {
         ]
     },
 
+    commercial: {
+        label: "Commercial",
+        folder: "images/commercial/",
+        images: [
+            // Drop photos in images/commercial/ then add one line per photo, e.g.:
+             { file: "1.jpg", title: "Retail Build-Out", caption: "Charlotte, NC — Tenant build-out for a retail space" },
+             { file: "2.jpg", title: "Retail Build-Out", caption: "Charlotte, NC — Tenant build-out for a retail space" },
+             { file: "3.jpg", title: "Lobby Build-Out", caption: "Charlotte, NC — Lobby build-out for a retail space" },
+             { file: "4.jpg", title: "Lobby Build-Out", caption: "Charlotte, NC — Lobby build-out for a retail space" },
+             { file: "5.jpg", title: "Appartment Build-Out", caption: "Charlotte, NC — Tenant build-out for a apartment space" },
+             { file: "6.jpg", title: "Appartment Build-Out", caption: "Charlotte, NC — Tenant build-out for a apartment space" },
+
+        ]
+    },
+
     
 
 };

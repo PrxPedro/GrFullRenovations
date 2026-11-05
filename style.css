@@ -398,6 +398,29 @@ header {
 .service-link:hover { gap: 10px; }
 
 /* ============================================================
+   COMMERCIAL BAND
+   ============================================================ */
+.commercial-band {
+    background: var(--navy);
+    padding: 48px 0;
+}
+.commercial-band-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.commercial-band-inner > div { flex: 1 1 520px; max-width: 760px; }
+.commercial-band .section-label { color: var(--gold); margin-bottom: 8px; }
+.commercial-band h3 { font-size: 1.8rem; color: #fff; margin-bottom: 8px; }
+.commercial-band p { color: rgba(255,255,255,.85); margin: 0; }
+.commercial-btn { flex-shrink: 0; }
+@media (max-width: 900px) {
+    .commercial-band-inner { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
    CTA BAND
    ============================================================ */
 .cta-band {

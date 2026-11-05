@@ -139,6 +139,11 @@ function buildGallery() {
         const cat    = GALLERY_CONFIG[catKey];
         const images = cat.images || [];
 
+        // Skip categories that have no photos and no fallback, so the tab
+        // never shows up empty. It appears automatically once photos are added.
+        const hasFallback = typeof FALLBACK_IMAGES !== 'undefined' && FALLBACK_IMAGES[catKey];
+        if (images.length === 0 && !hasFallback) return;
+
         // ---- Build filter button for this category ----
         const btn = document.createElement('button');
         btn.className       = 'filter-btn';
@@ -176,7 +181,7 @@ function createGalleryCard(category, src, title, caption, altText) {
 
     const img = document.createElement('img');
     img.src     = src;
-    img.alt     = `${title} — G&R Landmark renovation in Concord & Charlotte NC`;
+    img.alt     = `${title} - ${caption} - G&R Landmark`;
     img.loading = 'lazy';
 
     const overlay = document.createElement('div');
